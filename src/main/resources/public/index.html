@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR Attendance - Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<main class="auth">
+  <aside class="auth-side">
+    <div class="brand light"><span class="logo"><i class="bi bi-qr-code-scan"></i></span>QR Attendance</div>
+    <h1>Teacher attendance and room monitoring</h1>
+    <ul>
+      <li><i class="bi bi-qr-code"></i><span>Teachers generate a short-lived QR code for the room they are using.</span></li>
+      <li><i class="bi bi-upc-scan"></i><span>Staff scan the code to record Time In, and teachers press Time Out when class ends.</span></li>
+      <li><i class="bi bi-clipboard-data"></i><span>Administrators manage accounts and review, filter and print attendance reports.</span></li>
+    </ul>
+  </aside>
+  <section class="auth-main">
+    <div class="auth-card">
+      <h1>Welcome</h1>
+      <p class="sub">Sign in or create an account to continue.</p>
+      <div class="tabs">
+        <button type="button" class="on" id="tabLogin">Log in</button>
+        <button type="button" id="tabSignup">Sign up</button>
+      </div>
+      <div class="msg hidden" id="msg"></div>
+      <form id="authForm" novalidate>
+        <label class="field">Role
+          <select id="role">
+            <option value="teacher">Teacher</option>
+            <option value="staff">School staff</option>
+            <option value="admin" id="adminOpt">Administrator</option>
+          </select>
+        </label>
+        <div id="signupFields" class="hidden">
+          <label class="field">ID number<input id="employee" autocomplete="off"></label>
+          <div class="row2">
+            <label class="field">First name<input id="first" autocomplete="given-name"></label>
+            <label class="field">Last name<input id="last" autocomplete="family-name"></label>
+          </div>
+        </div>
+        <label class="field">Email<input type="email" id="email" autocomplete="email"></label>
+        <label class="field">Password<input type="password" id="password" autocomplete="current-password"></label>
+        <button class="btn block" id="submit" type="submit"><i class="bi bi-box-arrow-in-right"></i> Log in</button>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="js/core.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
